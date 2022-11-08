@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVCBlog.Blog>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee's Blog List</h2>
+
+@Html.ActionLink("Admin Login", "Login", "Admins")
+@Html.ActionLink("User Login", "Login", "Users")
+<p>
+
+
+    <h2 class="text-center text-justify" style="text-align:center">Blogs</h2>
+    @foreach (var item in Model)
+    {
+        <div class="container  col-md-6">
+            <div class="text-center" style="color:black ; background-color:aliceblue; border-radius:10px">
+                <div>
+                    <span style="font-size:large;font-family:'Times New Roman', Times, serif"> @Html.DisplayFor(modelItem => item.Title)-By</span>
+                    <p>
+                        <span style="font-size: medium; font-family: 'Times New Roman', Times, serif"> @Html.DisplayFor(modelItem => item.EmpEmailId)</span>
+                    </p>
+                </div>
+
+
+                <h4>
+                    <span style="font-size:small;font-family:Calibri">@Html.DisplayFor(modelItem => item.DateOfCreation)</span>
+                </h4>
+                <h4>
+                    <span style="font-size:medium ;font-family:Calibri"> @Html.DisplayFor(modelItem => item.Subject)</span>
+
+                </h4>
+                <div style="background-color:silver; color: white; border-radius: 10px">
+                    <h4>
+                        <a style="border-radius: 10px; font-size:x-large; font-family: Calibri" href="@Html.DisplayFor(modelItem => item.BlogUrl)">
+                            @item.BlogUrl
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    }
+
+    

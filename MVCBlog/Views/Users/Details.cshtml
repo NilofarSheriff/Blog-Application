@@ -1,0 +1,36 @@
+﻿@model MVCBlog.User
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfJoining)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfJoining)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passcode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit Employee", "Edit", new { id = Model.EmpEmailId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
